@@ -60,7 +60,7 @@ body {
   background-color: #fefefe;
   padding: 20px;
   border: 1px solid #888;
-  max-width: 400px; /* Adjust maximum width as needed */
+  max-width: 500px; /* Adjust maximum width as needed */
   width: 100%; /* Take full width of parent */
 }
 

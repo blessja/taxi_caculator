@@ -21,7 +21,7 @@ function calculateTax() {
     }
   }
 
-  let resultText = "Tax: " + tax.toFixed(2) + " Lakhs";
+  let resultText = tax.toFixed(2) + " Lakhs";
   showModal(resultText);
 }
 
