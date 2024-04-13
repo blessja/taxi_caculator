@@ -77,3 +77,12 @@ body {
   text-decoration: none;
   cursor: pointer;
 }
+
+.input-group-text {
+  background: transparent;
+  border: none;
+}
+
+.input-group-text i {
+  margin-right: 5px;
+}
