@@ -66,13 +66,11 @@ icons.forEach((icon) => {
 // Attach focus event listeners to each input field
 inputs.forEach((input) => {
   input.addEventListener("focus", function () {
-    // Show the icon associated with the input field
     const icon = this.parentNode.querySelector(".input-group-text i");
     icon.style.display = "inline";
   });
 
   input.addEventListener("blur", function () {
-    // Hide the icon associated with the input field
     const icon = this.parentNode.querySelector(".input-group-text i");
     icon.style.display = "none";
   });
