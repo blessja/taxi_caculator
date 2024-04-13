@@ -86,3 +86,7 @@ body {
 .input-group-text i {
   margin-right: 5px;
 }
+
+#incomeIcon {
+  display: none;
+}

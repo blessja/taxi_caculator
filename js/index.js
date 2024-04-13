@@ -43,3 +43,22 @@ function showModal(result) {
     }
   };
 }
+
+const inputs = document.querySelectorAll("#taxForm input");
+
+const icons = document.querySelectorAll(".input-group-text i");
+icons.forEach((icon) => {
+  icon.style.display = "none";
+});
+
+inputs.forEach((input) => {
+  input.addEventListener("focus", function () {
+    const icon = this.parentNode.querySelector(".input-group-text i");
+    icon.style.display = "inline";
+  });
+
+  input.addEventListener("blur", function () {
+    const icon = this.parentNode.querySelector(".input-group-text i");
+    icon.style.display = "none";
+  });
+});
