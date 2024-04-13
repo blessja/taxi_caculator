@@ -30,8 +30,10 @@ function showModal(result) {
   const close = document.getElementById("close_modal");
 
   modal.style.display = "block";
-
   document.getElementById("result").innerHTML = result;
+
+  const form = document.getElementById("taxForm");
+  form.reset();
 
   close.onclick = function () {
     modal.style.display = "none";
@@ -46,11 +48,6 @@ function showModal(result) {
 
 const inputs = document.querySelectorAll("#taxForm input");
 
-const icons = document.querySelectorAll(".input-group-text i");
-icons.forEach((icon) => {
-  icon.style.display = "none";
-});
-
 inputs.forEach((input) => {
   input.addEventListener("focus", function () {
     const icon = this.parentNode.querySelector(".input-group-text i");
@@ -60,5 +57,35 @@ inputs.forEach((input) => {
   input.addEventListener("blur", function () {
     const icon = this.parentNode.querySelector(".input-group-text i");
     icon.style.display = "none";
+  });
+});
+
+function validateAndCalculateTax() {
+  const ageGroup = document.getElementById("ageGroup").value;
+
+  if (ageGroup === "") {
+    const errorIcon = document.querySelector(".error-icon");
+    errorIcon.style.display = "inline";
+
+    $('[data-toggle="tooltip"]').tooltip();
+
+    setTimeout(() => {
+      $('[data-toggle="tooltip"]').tooltip("show");
+    }, 100);
+
+    return;
+  }
+
+  calculateTax();
+}
+
+// Add event listeners to input fields to clear errors on focus
+const inputFields = document.querySelectorAll("#taxForm input, #ageGroup");
+inputFields.forEach((inputField) => {
+  inputField.addEventListener("focus", function () {
+    const errorIcon = document.querySelector(".error-icon");
+    errorIcon.style.display = "none";
+
+    $('[data-toggle="tooltip"]').tooltip("hide");
   });
 });

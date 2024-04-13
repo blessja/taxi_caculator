@@ -46,13 +46,16 @@
 
             <div class="form-group pt-3">
               <label for="ageGroup" class="">Enter age group <i class="far fa-question-circle" data-toggle="tooltip" title="Please choose the age group you are"></i></label>
-              <select class="form-select" id="ageGroup" name="ageGroup" aria-label="Default select example">
-                <option selected></option>
-                <option value="<40">&lt; 40</option>
-                <option value=">=40&<60">&ge; 40 &lt; 60</option>
-                <option value=">=60">&ge; 60</option>
-              </select>
-
+              <div class="input-group">
+                <select class="form-select" id="ageGroup" name="ageGroup" aria-label="Default select example" required>
+                  <option value="" selected></option>
+                  <option value="<40">&lt; 40</option>
+                  <option value=">=40&<60">&ge; 40 &lt; 60</option>
+                  <option value=">=60">&ge; 60</option>
+                </select>
+                <!-- Error icon for age group -->
+                <span class="input-group-text error-icon" style="display:none;"><i class="fas fa-exclamation-circle" data-toggle="tooltip" title="This field is mandatory"></i></span>
+              </div>
             </div>
 
             <div class="form-group pt-3">
@@ -67,8 +70,7 @@
         </div>
 
         <div class="d-grid gap-2 col-12 mx-auto pt-lg-5">
-          <button onclick="calculateTax()" style="background-color: #250f8c; color: #fff;" class="btn" type="button">Submit</button>
-
+          <button onclick="validateAndCalculateTax()" style="background-color: #250f8c; color: #fff;" class="btn" type="button">Submit</button>
         </div>
 
         </form>
