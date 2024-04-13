@@ -1,22 +1,30 @@
 function calculateTax() {
   const grossIncome = parseFloat(document.getElementById("grossIncome").value);
-  const extraIncome = parseFloat(document.getElementById("extraIncome").value);
+  const extraIncome =
+    parseFloat(document.getElementById("extraIncome").value) || 0;
   const ageGroup = document.getElementById("ageGroup").value;
-  const deductions = parseFloat(document.getElementById("deductions").value);
+  const deductions =
+    parseFloat(document.getElementById("deductions").value) || 0;
 
   const taxableIncome = grossIncome + extraIncome - deductions;
   let tax = 0;
 
   if (taxableIncome > 8) {
     switch (ageGroup) {
-      case "<40":
+      case "under40":
+        console.log("Age group: <40");
         tax = 0.3 * (taxableIncome - 8);
+        console.log("Tax calculated:", tax);
         break;
-      case ">=40&<60":
+      case "40to59":
+        console.log("Age group: 40 to 59");
         tax = 0.4 * (taxableIncome - 8);
+        console.log("Tax calculated:", tax);
         break;
-      case ">=60":
+      case "over59":
+        console.log("Age group: >= 60");
         tax = 0.1 * (taxableIncome - 8);
+        console.log("Tax calculated:", tax);
         break;
     }
   }
@@ -46,15 +54,25 @@ function showModal(result) {
   };
 }
 
+// Get all input fields within the form
 const inputs = document.querySelectorAll("#taxForm input");
 
+// Hide all icons by default
+const icons = document.querySelectorAll(".input-group-text i");
+icons.forEach((icon) => {
+  icon.style.display = "none";
+});
+
+// Attach focus event listeners to each input field
 inputs.forEach((input) => {
   input.addEventListener("focus", function () {
+    // Show the icon associated with the input field
     const icon = this.parentNode.querySelector(".input-group-text i");
     icon.style.display = "inline";
   });
 
   input.addEventListener("blur", function () {
+    // Hide the icon associated with the input field
     const icon = this.parentNode.querySelector(".input-group-text i");
     icon.style.display = "none";
   });

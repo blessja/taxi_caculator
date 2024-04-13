@@ -28,7 +28,7 @@
                 <i class="far fa-question-circle" data-toggle="tooltip" title="Gross annual Income is your total salary in a year before any deductions"></i>
               </label>
               <div class="input-group">
-                <input type="text" class="form-control" id="grossIncome" name="grossIncome" min="0" placeholder="Enter gross annual income" required>
+                <input type="number" class="form-control" id="grossIncome" name="grossIncome" min="0" placeholder="Enter gross annual income" required>
                 <span class="input-group-text"><i class="fas fa-exclamation-circle" data-toggle="tooltip" title="Please enter numbers only"></i></span>
               </div>
             </div>
@@ -37,7 +37,7 @@
             <div class="form-group pt-3">
               <label for="extraIncome">Enter extra income <i class="far fa-question-circle" data-toggle="tooltip" title="Extra Income is your money besides your salary"></i></label>
               <div class="input-group">
-                <input type="text" class="form-control" id="extraIncome" name="extraIncome" min="0" placeholder="Enter extra income">
+                <input type="number" class="form-control" id="extraIncome" name="extraIncome" min="0" placeholder="Enter extra income">
                 <span class="input-group-text"><i class="fas fa-exclamation-circle" data-toggle="tooltip" title="Please enter numbers only"></i></span>
               </div>
 
@@ -49,9 +49,10 @@
               <div class="input-group">
                 <select class="form-select" id="ageGroup" name="ageGroup" aria-label="Default select example" required>
                   <option value="" selected></option>
-                  <option value="<40">&lt; 40</option>
-                  <option value=">=40&<60">&ge; 40 &lt; 60</option>
-                  <option value=">=60">&ge; 60</option>
+                  <option value="under40">&lt; 40</option>
+                  <option value="40to59">&ge; 40 &lt; 60</option>
+                  <option value="over59">&ge; 60</option>
+
                 </select>
                 <!-- Error icon for age group -->
                 <span class="input-group-text error-icon" style="display:none;"><i class="fas fa-exclamation-circle" data-toggle="tooltip" title="This field is mandatory"></i></span>
@@ -61,7 +62,7 @@
             <div class="form-group pt-3">
               <label for="deductions">Enter total applicable deductions <i class="far fa-question-circle" data-toggle="tooltip" title="Please enter all your deductions"></i></label>
               <div class="input-group">
-                <input type="text" class="form-control" id="deductions" name="deductions" min="0" placeholder="Enter total applicable deductions">
+                <input type="number" class="form-control" id="deductions" name="deductions" min="0" placeholder="Enter total applicable deductions">
                 <span class="input-group-text"><i class="fas fa-exclamation-circle" data-toggle="tooltip" title="Please enter numbers only"></i></span>
               </div>
 
