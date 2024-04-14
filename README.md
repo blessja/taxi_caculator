@@ -38,3 +38,7 @@ Blessing Jackson
 ## License
 
 Distributed under the MIT License.
+
+## Sreenshots of calculations
+
+![Age = 34, Income = 40 Lakhs, no deductions, tax = .3 * (40 - 8) = .3 * 32 = 9.6 Lakhs](https://github.com/blessja/taxi_caculator/blob/main/img/Screenshot%202024-04-13%20at%2021.23.47.png)
