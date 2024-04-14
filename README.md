@@ -16,6 +16,8 @@ This is a simple web-based tax calculator that calculates the tax based on the p
 git clone https://github.com/blessja/taxi_caculator.git
 ```
 
+- Open the index.html file in your preferred web browser.
+
 ### Usage
 
 - 1. Fill in the required fields:
